@@ -1,0 +1,475 @@
+*{
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #ffffff;
+}
+
+body{
+    background-color: #3e002f;
+}
+
+body:has(.ModalActive){
+    overflow: hidden;
+}
+
+.FontSemibold{
+    font-weight: 600;
+}
+
+main{    
+    max-width: 540px;
+    margin: 0 auto;
+}
+
+.BtnMusicWrapp{
+    position: fixed;
+    top: 40px;
+    right: 20px;
+    z-index: 2;
+}
+
+.BtnMusicRep{
+    background-color: #7f41d7;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px 0 rgb(25 23 173 / 40%);   
+}
+
+.BtnMusicRep:has(~ .ActiveMusicTrack:nth-of-type(4)) {
+    background-color: #f2b31c;
+}
+
+.BtnMusicWrapp-ControlWrapp{
+    background-color: #7f41d7;
+    border-radius: 50%;
+}
+
+.BtnMusicWrapp-ControlNext{
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px 0 rgb(25 23 173 / 40%);
+}
+
+.BtnMusicWrapp-ControlWrapp:has(~ .ActiveMusicTrack:nth-of-type(4)){
+    background-color: #f2b31c;
+}
+
+.BtnMusicPlay{
+    width: 40px;
+}
+
+.BtnMusicPause{
+    display: none;
+    width: 28px;
+}
+
+.BtnMusicWrapp-ControlNext{
+    display: none;
+}
+.BtnMusicNext{
+    width: 28px;
+}
+
+.BtnMusicWrapp.MusicActive .BtnMusicPause{
+    display: block;
+}
+.BtnMusicWrapp.MusicActive .BtnMusicPlay{
+    display: none;
+}
+
+.BtnMusicWrapp.MusicActive .BtnMusicWrapp-ControlNext{
+    display: flex;
+}
+
+.HeaderInv{    
+    position: sticky;
+    top: 0;
+}
+
+.HeaderInv-Wrapp{
+    position: relative;
+}
+
+.HeaderInv-Img{
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    object-position: top;
+    vertical-align: middle;
+}
+
+.HeaderOvelay{
+    background-image: linear-gradient(0deg, #17096880 0%, #17096854 14%, #1709683b 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.HeaderContent{
+    font-family: "Goldman", sans-serif;
+    /* font-weight: 700; */
+    position: absolute;
+    bottom: 60px;
+    right: 40px;
+    text-align: right;
+    rotate: 350deg;
+}
+
+.HeaderTitle{
+    font-family: "Goldman", sans-serif;
+    font-size: 98px;
+    line-height: 80px;    
+    color: #fff;
+}
+
+.HeaderSubtitle{
+    font-family: "Goldman", sans-serif;
+    font-size: 56px;
+    line-height: 48px;
+    font-style: italic;
+    margin-top: 6px;
+    color: #fff;
+}
+
+.GlassComp{
+    border: 1px solid #e1abbd;
+    background-color: rgb(159 50 97 / 45%);
+    box-shadow: 0 4px 8px 0 rgb(94 14 62);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 16px 16px 28px 16px;
+    margin-top: 34px;
+    border-radius: 8px;    
+}
+
+.MainContetInv{
+    padding: 20px 20px 50px 20px;
+    position: relative;
+    background-color: #fff;
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+    margin-top: -20px;
+    box-shadow: 0 -4px 8px 0 rgb(7 6 78 / 50%);  
+}
+
+.MainContetInv-BG{
+    background-image: url(./assets/bg-disco.jpg);
+    background-repeat: repeat-y;
+    background-position: center;
+    background-size: 100% auto;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* opacity: .7; */
+}
+
+.DateInv-Sec{
+    margin-top: 0;
+}
+
+.CardTitle{
+    font-family: "Goldman", sans-serif;
+    font-size: 28px;
+    line-height: 34px;
+    text-align: center;
+    color: #ffffff;
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+.CardSubtitle{
+    font-family: "Amaranth", sans-serif;
+    font-size: 22px;
+    line-height: 28px;
+    text-align: center;
+    color: #fff;
+    margin-top: 4px; 
+}
+
+.DateInv-FechaWrapp{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    font-size: 38px;
+    line-height: 50px;
+    font-weight: 700;
+    color: #1A1A8D;
+    margin-top: 4px;
+}
+
+.DateInv-Counter-Title{
+    font-size: 22px;
+    line-height: 28px;
+    text-align: center;
+}
+
+.DateInv-Counter{
+    margin-top: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.DateInv-CounterWrapp{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 24px;
+    font-size: 26px;
+    line-height: 34px;
+}
+
+.DateInv-Counter-Num{
+    font-size: 28px;
+    line-height: 34px;
+    text-align: center;
+}
+
+.DateInv-Counter-Text{
+    font-size: 16px;
+    line-height: 24px;
+    text-transform: uppercase;
+}
+
+.PlaceInv-Sec{
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+}
+
+.InvImgContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.InvImgContent-Img{
+    width: 100px;
+}
+
+.InvImgContent-Header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.InvImgContent-Content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+}
+
+.InvImgContent-Text{
+    font-size: 15px;
+    line-height: 24px;
+    text-align: center;
+    width: 100%;
+}
+
+.InvImgContet-Btn{
+    background-image: linear-gradient(32deg, #9646ff 20%, #eb1db5);
+    color: #fff;
+    padding: 12px 12px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    width: 100%;
+    max-width: 360px;
+    text-align: center;
+}
+
+.DrinkInv-Text{
+    text-align: center;
+    width: 100%;
+    max-width: 380px;
+}
+
+.Timeline-Section{
+    align-self: flex-start;    
+    padding: 12px 0;
+    overflow-x: scroll;
+    width: 100%;
+}
+
+.Timeline-Section::-webkit-scrollbar {
+    display: none;
+}
+
+.TimelineWrapp{
+    width: fit-content;
+    padding-bottom: 6px;
+}
+
+.Timeline-PhotoWrapp{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 302px;
+    gap: 16px;
+}
+
+.Timeline-Memory{
+    flex: 0 0 calc((100% / 3) - 12px);    
+    position: relative;
+}
+
+.Timeline-Memory:nth-of-type(3n+1) {
+    transform: translateX(12px);
+}
+
+.Timeline-Memory:nth-of-type(3n+3) {
+    transform: translateX(40px);
+}
+
+.Timeline-Memory:first-child{
+    padding-left: 0;
+}
+
+.Timeline-MemoryImg{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+    vertical-align: middle;
+}
+
+.Timeline-Memory:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(rgb(211 178 247 / 0%) 0%, rgb(255 255 255 / 0%) 60%, rgb(156 17 227) 70%, #f178e2 100%);
+    border-radius: 50%;
+    box-shadow: 0 4px 8px 0 rgb(28 12 90 / 75%);
+}
+
+.ModalGalleryWrap{
+    height: 90dvh;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(118 1 101 / 80%);
+    border-top: 5px solid #c7148e;
+    border-radius: 16px 16px 0 0;
+    backdrop-filter: blur(12px);
+    padding: 60px 0;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    transform: translateY(120%);
+    transition: transform 1s ease, opacity 1s ease;
+    opacity: 40%;
+    z-index: 10;
+}
+
+.ModalGalleryWrap.ModalActive{
+    transform: translateY(0);
+    opacity: 100%;
+}
+
+.ModalGallery-CloseBtn{
+    border-radius: 50px;
+    border: 1px solid #c7148e;
+    background-color: #630d72;
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c7148e;
+    font-weight: 700;
+    z-index: 10;
+    font-size: 20px;
+}
+
+.ModalGallery-WaveTop{
+    height: 150px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.ModalGallery-WaveBottom{
+    height: 150px;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.ModalGallery-Carrusel{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 12px;
+    position: relative;
+}
+
+.ModalGallery-Carrusel::-webkit-scrollbar{
+    display: none;
+}
+
+.ModalGallery-Carrusel img{
+    width: calc(100% - 80px);
+    scroll-snap-align: center;
+    box-shadow: 0 4px 8px 0 rgb(26 8 61 / 85%);
+    border-radius: 8px;
+    vertical-align: middle;
+    max-height: 600px;
+}
+
+.ModalGallery-Carrusel img:first-of-type{
+    margin-left: 40px;
+}
+
+.ModalGallery-Carrusel img:last-of-type{
+    margin-right: 40px;
+}
+
+/*Day Invite*/
+.DayInvite .DateInv-CounterWrapp,
+.NextDayInvite .DateInv-CounterWrapp{
+    display: none;
+}
+
+.DayInvite .DateInv-Counter-Title{
+    font-size: 32px;
+    line-height: 48px;
+    font-weight: 700;
+}
