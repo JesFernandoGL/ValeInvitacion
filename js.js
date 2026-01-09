@@ -6,7 +6,7 @@ eventsPhotos();
 animationsInit();
 musicPlayer();
 
-let randomMusic = Math.floor(Math.random() * 3);
+//let randomMusic = Math.floor(Math.random() * 3);
 
 let timerInterval = '';
 
@@ -151,7 +151,7 @@ function musicPlayer(){
         document.querySelector('.ActiveMusicTrack').pause();
         const id = Number($('.ActiveMusicTrack').attr('data-id'));
         $('.AudioMusic').removeClass('ActiveMusicTrack');
-        if(id < 2 || (randomMusic === 0 && id < $('.AudioMusic').length )){
+        if(id < 2 /*|| (randomMusic === 0 && id < $('.AudioMusic').length )*/){
             $(`.AudioMusic:nth-of-type(${id + 1})`).addClass('ActiveMusicTrack');
             $(`.AudioMusic:nth-of-type(${id + 1})`)[0].play();            
         }else{
